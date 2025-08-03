@@ -1,3 +1,11 @@
+путь к проекту:
+Y:\RAZRAB\IVAN\Voice_of_Dead
+
+
+
 ssh-keygen -t ed25519 -C "d707599@gmail.com"
 Имя: DxKey
 фраза: 9598
+
+
+
