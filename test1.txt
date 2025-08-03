@@ -1,3 +1,5 @@
+Voice_of_Dead
+
 путь к проекту:
 Y:\RAZRAB\IVAN\Voice_of_Dead
 
@@ -9,3 +11,5 @@ ssh-keygen -t ed25519 -C "d707599@gmail.com"
 
 
 
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+https://stackoverflow.com/questions/40957380/remote-invalid-username-or-password-fatal-authentication-failed
