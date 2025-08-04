@@ -14,7 +14,7 @@ public class Damage : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Health = Player.GetComponent<Health>();
-        print(Health);
+        //print(Health);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
