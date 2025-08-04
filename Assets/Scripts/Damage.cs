@@ -5,8 +5,8 @@ public class Damage : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
 
-    GameObject Player;
-    Health Health;
+    private GameObject Player;
+    private Health Health;
 
     float timer;
 
@@ -14,6 +14,7 @@ public class Damage : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Health = Player.GetComponent<Health>();
+        print(Health);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

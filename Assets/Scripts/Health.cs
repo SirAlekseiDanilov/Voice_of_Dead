@@ -5,7 +5,7 @@ public class Health : MonoBehaviour
 {
     public int currentHealth;
     public float flashSpeed = 5;
-    public Slider healthSlider;
+    //public Slider healthSlider;
     public Color flashColour = new Color(1, 0, 0, 0.1f);
     private bool isDead;
     private bool damaged;
@@ -26,6 +26,6 @@ public class Health : MonoBehaviour
     {
         damaged = true;
         currentHealth -= amount;
-        healthSlider.value = currentHealth;
+        //healthSlider.value = currentHealth;
     }
 }
