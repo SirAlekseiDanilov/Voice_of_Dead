@@ -1043,7 +1043,35 @@ PrefabInstance:
       objectReference: {fileID: 2084099194}
     - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
       propertyPath: currentHealth
-      value: 70
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 406137042}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetSelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraFollow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753730889762401564, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3370772392908244302, guid: 979a481e1a512744482220c2d7de3226, type: 3}
       propertyPath: m_RootOrder

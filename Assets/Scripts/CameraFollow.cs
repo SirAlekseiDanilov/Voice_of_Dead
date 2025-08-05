@@ -14,4 +14,8 @@ public class CameraFollow : MonoBehaviour
 
 
     }
+    public void GetSelf() {
+        followTransform = transform;
+    }
+
 }
