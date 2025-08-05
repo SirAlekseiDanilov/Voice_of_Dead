@@ -1,32 +1,48 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int currentHealth;
-    private int health;
-    //[SerializeField] private int health;
-    public float flashSpeed = 5;
+    [SerializeField] private int currentHealth;
+    /// <summary>
+    /// Очки жизни.
+    /// </summary>
+    public int HitPoints => currentHealth;
+    /// <summary>
+    /// Максимально возможное кол-во очков жизни (на старте).
+    /// </summary>
+    private int maxHealth;
+    /// <summary>
+    /// Слайдер кол-ва жизней Игрока в UI.
+    /// </summary>
     public Slider healthSlider;
-    public Color flashColour = new Color(1, 0, 0, 0.1f);
 
-    private void Awake()
-    {
-
+    /*
+    private void Awake() {
         healthSlider = GameObject.FindGameObjectWithTag("UI_H").GetComponent<Slider>();
     }
+    */
+
     private void Start() {
-        health = currentHealth;
+        maxHealth = currentHealth;
     }
 
  
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        float sl = currentHealth / (float)health;
-        print(currentHealth);
-        print(health);
-        print(sl);
-        healthSlider.value = sl;
+        healthSlider.value = currentHealth / (float)maxHealth; 
+        if (currentHealth <= 0) {
+            Dead();
+        } ;
     }
+
+    private void Dead() {
+        Destroy(gameObject);
+        EventDeath?.Invoke();
+    }
+
+    [SerializeField] private UnityEvent EventDeath;
+    public UnityEvent EventOnDeath => EventDeath;
 }

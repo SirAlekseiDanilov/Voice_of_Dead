@@ -14,12 +14,11 @@ public class Damage : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Health = Player.GetComponent<Health>();
-        //print(Health);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject == Player)
+        if (col.gameObject == Player & timer > timeBetweenAttacks)
         {
             Attack();
         }
@@ -28,19 +27,14 @@ public class Damage : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-
-        if (Health.currentHealth <= 0)
-        {
-            // TODO: add death script here.
-        }
     }
 
     void Attack()
     {
+        //print(timer);
         timer = 0f;
-        if (Health.currentHealth > 0)
-        {
-            Health.TakeDamage(attackDamage);
+        if (Health.HitPoints > 0) {
+            Health.TakeDamage(attackDamage); // избыточно? не крутить разве анимацию урона
         }
     }
 }
