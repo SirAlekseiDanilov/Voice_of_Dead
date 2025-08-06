@@ -1073,6 +1073,26 @@ PrefabInstance:
       propertyPath: EventDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2971587296408517258, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370772391671964384, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370772391671964384, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370772391671964384, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370772391671964387, guid: 979a481e1a512744482220c2d7de3226, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 246d7c7c8e9e6cf43893ae13c5a81bdf, type: 3}
     - target: {fileID: 3370772392908244302, guid: 979a481e1a512744482220c2d7de3226, type: 3}
       propertyPath: m_RootOrder
       value: 0
