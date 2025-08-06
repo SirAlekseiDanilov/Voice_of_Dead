@@ -1,20 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class movePlayer : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float speed = 0.5f;
-    [SerializeField] private Vector2 moveVector;
     /// <summary>
-    /// Направление (вращение) игрока.
+    /// Тело персонажа (привязка).
     /// </summary>
-    private Vector2 faceRotation;
+    private Rigidbody2D rb;
+    /// <summary>
+    /// Персонажа скорость.
+    /// </summary>
+    public float speed = 0.5f;
+    /// <summary>
+    /// Направление от пользователя.
+    /// </summary>
+    [SerializeField] private Vector2 moveVector;
+
+    [SerializeField] private float angle;
+    private float delta = 0.0f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -32,6 +42,7 @@ public class movePlayer : MonoBehaviour
         moveVector.x = Input.GetAxis("Horizontal");
         moveVector.y = Input.GetAxis("Vertical");
     }
+
     /// <summary>
     /// Передвижение.
     /// </summary>
@@ -42,8 +53,42 @@ public class movePlayer : MonoBehaviour
     /// Вращение.
     /// </summary>
     private void Rotator() {
+        // наоборот оси от камеры направлены...
+        print(moveVector);
+        //angle = 0;
+        if (moveVector.x > delta) {
+            angle = -90;
+            if (moveVector.y > delta) {
+                angle += 45;
+            }
+            if (moveVector.y < -delta) {
+                angle -= 45;
+            }
+            else {
+                angle = 90;
+                if (moveVector.y > delta) {
+                    angle += 45;
+                }
+                if (moveVector.y < -delta) {
+                    angle -= 45;
+                }
+            }
+        }
+        print(angle);
+        transform.localRotation =
+            Quaternion.Euler(0f, 0f, (float)angle);
 
+        //Vector3 v = new Vector3(0, 0, (float)angle);
+        //transform.Rotate(v);
+        //transform.Rotate = v;
+        /*
+        double angle = Math.Atan(moveVector.y / moveVector.x) * 180 / Math.PI + 90;
+        print(angle);
+        //rb.MoveRotation((float)angle);
+        */
 
+        //Debug.DrawRay(transform.position, moveVector.normalized, color: Color.blue, 1);
+        //print(moveVector.normalized);
 
         /*
         // GeometryKrash.Vehicle
