@@ -19,7 +19,7 @@ public class movePlayer : MonoBehaviour
     [SerializeField] private Vector2 moveVector;
 
     [SerializeField] private float angle;
-    private float delta = 0.0f;
+    private float delta = 0.01f;
 
     void Awake()
     {
@@ -30,10 +30,15 @@ public class movePlayer : MonoBehaviour
     void Update()
     {
         UserPress();
+
+        //Move();
+        //Rotator();
+        
         if (moveVector != Vector2.zero) {
             Move();
             Rotator();
         }
+        
     }
     /// <summary>
     /// Пользовательский ввод.
@@ -55,28 +60,20 @@ public class movePlayer : MonoBehaviour
     private void Rotator() {
         // наоборот оси от камеры направлены...
         print(moveVector);
-        //angle = 0;
-        if (moveVector.x > delta) {
-            angle = -90;
-            if (moveVector.y > delta) {
-                angle += 45;
-            }
-            if (moveVector.y < -delta) {
-                angle -= 45;
-            }
-            else {
-                angle = 90;
-                if (moveVector.y > delta) {
-                    angle += 45;
-                }
-                if (moveVector.y < -delta) {
-                    angle -= 45;
-                }
-            }
-        }
+        if (moveVector.x > delta & moveVector.y > delta) { angle = -45; }
+        if (moveVector.x > delta & moveVector.y < -delta) { angle = -135; }
+        if (moveVector.x < -delta & moveVector.y > delta) { angle = 45; }
+        if (moveVector.x < -delta & moveVector.y < -delta) { angle = 135; }
+
+        if (moveVector.x > delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = -90; }
+        if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y < -delta) { angle = 180; }
+        if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y > delta) { angle = 0; }
+        if (moveVector.x < -delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 90; }
         print(angle);
-        transform.localRotation =
-            Quaternion.Euler(0f, 0f, (float)angle);
+        // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
+
+        Vector3 newRotation = new Vector3(0f, 0f, angle);
+        transform.eulerAngles = newRotation;
 
         //Vector3 v = new Vector3(0, 0, (float)angle);
         //transform.Rotate(v);
