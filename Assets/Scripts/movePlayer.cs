@@ -59,7 +59,7 @@ public class movePlayer : MonoBehaviour
     /// </summary>
     private void Rotator() {
         // наоборот оси от камеры направлены...
-        print(moveVector);
+        // print(moveVector);
         if (moveVector.x > delta & moveVector.y > delta) { angle = -45; }
         if (moveVector.x > delta & moveVector.y < -delta) { angle = -135; }
         if (moveVector.x < -delta & moveVector.y > delta) { angle = 45; }
@@ -69,7 +69,7 @@ public class movePlayer : MonoBehaviour
         if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y < -delta) { angle = 180; }
         if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y > delta) { angle = 0; }
         if (moveVector.x < -delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 90; }
-        print(angle);
+        // print(angle);
         // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
 
         Vector3 newRotation = new Vector3(0f, 0f, angle);

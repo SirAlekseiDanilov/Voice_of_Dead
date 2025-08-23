@@ -1,40 +1,42 @@
 using UnityEngine;
 
-public class Damage : MonoBehaviour
-{
-    public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 10;
+namespace VoD {
 
-    private GameObject Player;
-    private Health Health;
+    public class Damage : MonoBehaviour {
+        public float timeBetweenAttacks = 0.5f;
+        public int attackDamage = 10;
 
-    float timer;
+        private GameObject Player;
+        private Health Health;
 
-    private void Awake()
-    {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        Health = Player.GetComponent<Health>();
-    }
+        /// <summary>
+        /// Урона тип.
+        /// </summary>
+        [SerializeField] private DamageClass damageClass;
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject == Player & timer > timeBetweenAttacks)
-        {
-            Attack();
+        float timer;
+
+        private void Awake() {
+            Player = GameObject.FindGameObjectWithTag("Player");
+            Health = Player.GetComponent<Health>();
         }
-    }
 
-    private void Update()
-    {
-        timer += Time.deltaTime;
-    }
-
-    void Attack()
-    {
-        //print(timer);
-        timer = 0f;
-        if (Health.HitPoints > 0) {
-            Health.TakeDamage(attackDamage); // избыточно? не крутить разве анимацию урона
+        private void OnTriggerEnter2D(Collider2D col) {
+            if (col.gameObject == Player & timer > timeBetweenAttacks) {
+                Attack();
+            }
         }
-    }
+
+        private void Update() {
+            timer += Time.deltaTime;
+        }
+
+        void Attack() {
+            //print(timer);
+            timer = 0f;
+            if (Health.HitPoints > 0) {
+                Health.TakeDamage(attackDamage); // избыточно? не крутить разве анимацию урона
+            }
+        }
+    } 
 }
