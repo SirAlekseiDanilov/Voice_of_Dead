@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
-{
+namespace VoD {
 
-    public Transform followTransform;
+    public class CameraFollow : MonoBehaviour {
+
+        public Transform followTransform;
 
 
-    void FixedUpdate()
-    {
-        this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
+        void FixedUpdate() {
+            this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
 
+
+        }
+        public void GetSelf() {
+            followTransform = transform;
+        }
 
     }
-    public void GetSelf() {
-        followTransform = transform;
-    }
-
 }
