@@ -22,8 +22,11 @@ namespace VoD {
         [SerializeField] private float angle;
         private float delta = 0.01f;
 
+        private Transform bodyPlayer;
+
         void Awake() {
             rb = GetComponent<Rigidbody2D>();
+            bodyPlayer = GetComponent<Player>().Body;
 
         }
 
@@ -72,7 +75,7 @@ namespace VoD {
             // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
 
             Vector3 newRotation = new Vector3(0f, 0f, angle);
-            transform.eulerAngles = newRotation;
+            bodyPlayer.eulerAngles = newRotation;
 
             //Vector3 v = new Vector3(0, 0, (float)angle);
             //transform.Rotate(v);

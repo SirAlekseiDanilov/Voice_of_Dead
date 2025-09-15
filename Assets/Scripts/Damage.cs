@@ -7,7 +7,7 @@ namespace VoD {
         public int attackDamage = 10;
 
         private GameObject Player;
-        private Health Health;
+        private Player Health;
 
         /// <summary>
         /// Урона тип.
@@ -18,7 +18,7 @@ namespace VoD {
 
         private void Awake() {
             Player = GameObject.FindGameObjectWithTag("Player");
-            Health = Player.GetComponent<Health>();
+            Health = Player.GetComponent<Player>();
         }
 
         private void OnTriggerEnter2D(Collider2D col) {
