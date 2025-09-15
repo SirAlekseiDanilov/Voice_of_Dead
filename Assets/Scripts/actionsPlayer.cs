@@ -1,20 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class actionsPlayer : MonoBehaviour
-{
-    private int i;
+namespace VoD {
 
-    void Start()
-    {
-        
-    }
+    public class actionsPlayer : MonoBehaviour {
+        private Player player;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            print(1);
+        void Start() {
+            player = GetComponent<Player>();
+        }
+
+        void Update() {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                //print(1);
+                player.Weapon.Attack();
+            }
         }
     }
 }

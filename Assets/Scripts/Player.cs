@@ -5,6 +5,9 @@ using UnityEngine.UI;
 namespace VoD {
 
     public class Player : MonoBehaviour {
+
+        [Header("Health:")]
+
         [SerializeField] private int currentHealth;
         /// <summary>
         /// Очки жизни.
@@ -20,10 +23,32 @@ namespace VoD {
         public Slider healthSlider;
 
         /// <summary>
+        /// Связи:
+        /// </summary>
+        [Header("Links:")]
+
+        /// <summary>
         /// Тело игрока.
         /// </summary>
         [SerializeField] private Transform body;
         public Transform Body => body;
+        /// <summary>
+        /// Оружие.
+        /// </summary>
+        [SerializeField] private Weapon weapon;
+        public Weapon Weapon => weapon;
+
+        //[Header("Movement")]
+
+
+        /// <summary>
+        /// События:
+        /// </summary>
+        [Header("Events:")]
+        
+        [SerializeField] private UnityEvent EventDeath;
+        public UnityEvent EventOnDeath => EventDeath;
+
 
         /*
         private void Awake() {
@@ -50,7 +75,5 @@ namespace VoD {
             EventDeath?.Invoke();
         }
 
-        [SerializeField] private UnityEvent EventDeath;
-        public UnityEvent EventOnDeath => EventDeath;
     }
 }
