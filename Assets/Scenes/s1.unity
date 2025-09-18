@@ -229,8 +229,7 @@ MonoBehaviour:
   w_Name: "\u041A\u0443\u043B\u0430\u043A"
   w_Damage: 1
   w_Periodicity: 0.5
-  destruct: {fileID: 0}
-  potential: 0
+  tWeapon: {fileID: 1201369539}
 --- !u!1 &406137038
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +541,7 @@ GameObject:
   - component: {fileID: 791500570}
   m_Layer: 0
   m_Name: nub
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
