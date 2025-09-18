@@ -195,7 +195,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205640975}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -229,7 +229,8 @@ MonoBehaviour:
   w_Name: "\u041A\u0443\u043B\u0430\u043A"
   w_Damage: 1
   w_Periodicity: 0.5
-  w_Damage2: 0
+  destruct: {fileID: 0}
+  potential: 0
 --- !u!1 &406137038
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791500574}
-  - component: {fileID: 791500573}
+  - component: {fileID: 791500575}
   - component: {fileID: 791500572}
   - component: {fileID: 791500571}
   - component: {fileID: 791500570}
@@ -556,7 +557,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -635,25 +636,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &791500573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791500569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c5cfc96e488aa43b911a2b17448aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 20
-  healthSlider: {fileID: 0}
-  body: {fileID: 0}
-  weapon: {fileID: 0}
-  EventDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &791500574
 Transform:
   m_ObjectHideFlags: 0
@@ -669,6 +651,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791500575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791500569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607c55050df51d24ea26321c354c9e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Indestructible: 0
+  HitPointsAll: 3
 --- !u!1 &899400343
 GameObject:
   m_ObjectHideFlags: 0
