@@ -11,8 +11,13 @@ namespace VoD {
         [Header("Settings:")]
 
         [SerializeField] private Transform head;
+        private Player player;
 
         private RaycastHit2D hit;
+
+        private void Start() {
+            player = transform.root.GetComponent<Player>();
+        }
 
         /// <summary>
         /// Атака кулаком:
@@ -24,9 +29,10 @@ namespace VoD {
             //https://unityhub.ru/scripting/Physics2D.Raycast
             //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
             //hit = Physics2D.Raycast(tWeapon.position, Vector2.up, Mathf.Infinity);
-            hit = Physics2D.Raycast(head.position, Vector2.up, WeaponDistance); //localPosition
+            hit = Physics2D.Raycast(head.position, player.HeadAngleNorm, WeaponDistance); //localPosition
             if (hit.collider != null) {
                 print("Объект найден: " + hit.collider.name);
+                hit.transform.GetComponent<Destructible>().ApplyDamage(WeaponDamage);
             }
             // https://unityhub.ru/scripting/Debug.DrawLine
             // Debug.DrawLine(tWeapon.position, Vector2.up, Color.green, 2.5f);

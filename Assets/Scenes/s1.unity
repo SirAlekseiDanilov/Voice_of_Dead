@@ -229,6 +229,7 @@ MonoBehaviour:
   names: "\u041A\u0443\u043B\u0430\u043A"
   damage: 1
   periodicity: 0.25
+  distance: 10
   head: {fileID: 1201369539}
 --- !u!1 &406137038
 GameObject:

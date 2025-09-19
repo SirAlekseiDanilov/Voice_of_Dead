@@ -40,6 +40,17 @@ namespace VoD {
 
         //[Header("Movement")]
 
+        [Header("Info:")]
+
+        [SerializeField] private float headAngle;
+        /// <summary>
+        /// Головы поворот.
+        /// </summary>
+        public float HeadAngle { get => headAngle; set => headAngle = value; }
+        
+        [SerializeField] private Vector2 headAngleNorm;
+        public Vector2 HeadAngleNorm { get => headAngleNorm; set => headAngleNorm = value; }
+        // задание лучше функцией
 
         /// <summary>
         /// События:

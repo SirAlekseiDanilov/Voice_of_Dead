@@ -65,6 +65,10 @@ namespace VoD {
             //EventOnDeath?.Invoke();
         }
 
+        private void Start() {
+            HitPointsCurrent = HitPointsAll;
+        }
+
         #endregion
 
     }
