@@ -226,10 +226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54934474b9f6fc744869f8b89423c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w_Name: "\u041A\u0443\u043B\u0430\u043A"
-  w_Damage: 1
-  w_Periodicity: 0.5
-  tWeapon: {fileID: 1201369539}
+  names: "\u041A\u0443\u043B\u0430\u043A"
+  damage: 1
+  periodicity: 0.25
+  head: {fileID: 1201369539}
 --- !u!1 &406137038
 GameObject:
   m_ObjectHideFlags: 0

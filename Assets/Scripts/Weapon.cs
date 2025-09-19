@@ -6,6 +6,7 @@ namespace VoD {
     /// Оружие.
     /// </summary>
     public abstract class Weapon : MonoBehaviour {
+
         [Header("Weapon:")]
 
         /// <summary>
@@ -13,25 +14,31 @@ namespace VoD {
         /// </summary>
         #region Properties
 
-        [SerializeField] private string w_Name;
+        [SerializeField] private string names;
         /// <summary>
         /// Наименование оружия.
         /// </summary>
-        public string WeaponName { get => w_Name; set => w_Name = value; }
+        public string WeaponName { get => names; set => names = value; }
 
 
-        [SerializeField] private int w_Damage;
+        [SerializeField] private int damage;
         /// <summary>
         /// Урон оружия.
         /// </summary>
-        public int WeaponDamage { get => w_Damage; set => w_Damage = value; }
+        public int WeaponDamage { get => damage; set => damage = value; }
 
 
-        [SerializeField] private float w_Periodicity;
+        [SerializeField] private float periodicity;
         /// <summary>
         /// Частота использования оружия сек. (между выстрелами).
         /// </summary>
-        public float WeaponPeriodicity { get => w_Periodicity; set => w_Periodicity = value; }
+        public float WeaponPeriodicity { get => periodicity; set => periodicity = value; }
+
+        [SerializeField] private float distance;
+        /// <summary>
+        /// Дальность действия оружия.
+        /// </summary>
+        public float WeaponDistance { get => distance; set => distance = value; }
 
 
         /*
