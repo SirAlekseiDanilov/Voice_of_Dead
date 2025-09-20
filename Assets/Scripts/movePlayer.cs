@@ -67,15 +67,15 @@ namespace VoD {
         private void Rotator() {
             // наоборот оси от камеры направлены...
             // print(moveVector);
-            if (moveVector.x > delta & moveVector.y > delta) { angle = 360-45; angleNorm = new Vector2(0.5f, -0.5f); }
-            if (moveVector.x > delta & moveVector.y < -delta) { angle = 360-135; angleNorm = new Vector2(-0.5f, -0.5f); }
-            if (moveVector.x < -delta & moveVector.y > delta) { angle = 45; angleNorm = new Vector2(0.5f, 0.5f); }
-            if (moveVector.x < -delta & moveVector.y < -delta) { angle = 135; angleNorm = new Vector2(0.5f, -0.5f); }
+            if (moveVector.x > delta & moveVector.y > delta) { angle = 360-45; angleNorm = new Vector2(0.5f, 0.5f); }
+            if (moveVector.x > delta & moveVector.y < -delta) { angle = 360-135; angleNorm = new Vector2(0.5f, -0.5f); }
+            if (moveVector.x < -delta & moveVector.y > delta) { angle = 45; angleNorm = new Vector2(-0.5f, 0.5f); }
+            if (moveVector.x < -delta & moveVector.y < -delta) { angle = 135; angleNorm = new Vector2(-0.5f, -0.5f); }
 
-            if (moveVector.x > delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 360-90; angleNorm = Vector2.left; }
+            if (moveVector.x > delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 360-90; angleNorm = Vector2.right; }
             if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y < -delta) { angle = 180; angleNorm = Vector2.down; }
             if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y > delta) { angle = 0; angleNorm = Vector2.up; }
-            if (moveVector.x < -delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 90; angleNorm = Vector2.right; }
+            if (moveVector.x < -delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 90; angleNorm = Vector2.left; }
             // print(angle);
             // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
 
@@ -129,6 +129,29 @@ float angleDiff = Vector3.SignedAngle(currentWorldForwardDirection,
         worldDirectionToPointForward, Vector3.forward);
 
 transform.Rotate(Vector3.forward, angleDiff, Space.World);
+*/
+
+/*
+private void Rotator() {
+    // наоборот оси от камеры направлены...
+    // print(moveVector);
+    if (moveVector.x > delta & moveVector.y > delta) { angle = 360 - 45; angleNorm = new Vector2(0.5f, -0.5f); }
+    if (moveVector.x > delta & moveVector.y < -delta) { angle = 360 - 135; angleNorm = new Vector2(-0.5f, -0.5f); }
+    if (moveVector.x < -delta & moveVector.y > delta) { angle = 45; angleNorm = new Vector2(0.5f, 0.5f); }
+    if (moveVector.x < -delta & moveVector.y < -delta) { angle = 135; angleNorm = new Vector2(0.5f, -0.5f); }
+
+    if (moveVector.x > delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 360 - 90; angleNorm = Vector2.left; }
+    if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y < -delta) { angle = 180; angleNorm = Vector2.down; }
+    if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y > delta) { angle = 0; angleNorm = Vector2.up; }
+    if (moveVector.x < -delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 90; angleNorm = Vector2.right; }
+    // print(angle);
+    // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
+
+
+    bodyPlayer.eulerAngles = new Vector3(0f, 0f, angle);
+    player.HeadAngle = angle;
+    player.HeadAngleNorm = angleNorm;
+}
 */
 
 #endregion
