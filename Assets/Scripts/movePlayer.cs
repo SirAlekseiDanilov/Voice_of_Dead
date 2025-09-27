@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace VoD {
@@ -23,7 +20,7 @@ namespace VoD {
         private Vector2 angleNorm;
 
 
-        private float delta = 0.01f;
+        private float delta = 0.05f;
 
         private Player player;
         private Transform bodyPlayer;

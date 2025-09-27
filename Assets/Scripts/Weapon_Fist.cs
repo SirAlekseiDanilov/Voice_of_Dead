@@ -1,4 +1,5 @@
 //using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace VoD {
@@ -13,10 +14,17 @@ namespace VoD {
         [SerializeField] private Transform head;
         private Player player;
 
+        [SerializeField] private LineRenderer line;
+
         private RaycastHit2D hit;
 
         private void Start() {
             player = transform.root.GetComponent<Player>();
+            //line = transform.GetComponent<LineRenderer>();
+
+            //line.SetVertexCount(2);
+            //line.positionCount = 2;
+            line.SetPosition(1, new Vector3(0, WeaponDistance - 0.5f, 0));
         }
 
         /// <summary>
