@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace VoD {
 
@@ -39,6 +40,11 @@ namespace VoD {
         /// Дальность действия оружия.
         /// </summary>
         public float WeaponDistance { get => distance; set => distance = value; }
+
+        /// <summary>
+        /// Картинка оружия на сцене.
+        /// </summary>
+        [SerializeField] private Sprite image;
 
 
         /*

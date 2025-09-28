@@ -23,12 +23,14 @@ namespace VoD {
         private float delta = 0.05f;
 
         private Player player;
-        private Transform bodyPlayer;
+        private Transform headPlayer;
+        private Transform armPlayer;
 
         void Awake() {
             rb = GetComponent<Rigidbody2D>();
             player = GetComponent<Player>();
-            bodyPlayer = player.Body;
+            headPlayer = player.Body;
+            armPlayer = player.Arm;
             //angle = GetComponent<Player>().HeadAngle;
         }
 
@@ -77,7 +79,8 @@ namespace VoD {
             // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
 
 
-            bodyPlayer.eulerAngles = new Vector3(0f, 0f, angle);
+            headPlayer.eulerAngles = new Vector3(0f, 0f, angle);
+            armPlayer.eulerAngles = new Vector3(0f, 0f, angle);
             player.HeadAngle = angle;
             player.HeadAngleNorm = angleNorm;
         }

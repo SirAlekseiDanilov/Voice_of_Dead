@@ -13,10 +13,12 @@ namespace VoD {
         /// Очки жизни.
         /// </summary>
         public int HitPoints => currentHealth;
+
         /// <summary>
         /// Максимально возможное кол-во очков жизни (на старте).
         /// </summary>
         private int maxHealth;
+
         /// <summary>
         /// Слайдер кол-ва жизней Игрока в UI.
         /// </summary>
@@ -28,10 +30,23 @@ namespace VoD {
         [Header("Links:")]
 
         /// <summary>
+        /// Голова игрока.
+        /// </summary>
+        [SerializeField] private Transform head;
+        public Transform Head => head;
+
+        /// <summary>
         /// Тело игрока.
         /// </summary>
         [SerializeField] private Transform body;
         public Transform Body => body;
+
+        /// <summary>
+        /// Рука игрока.
+        /// </summary>
+        [SerializeField] private Transform arm;
+        public Transform Arm => arm;
+
         /// <summary>
         /// Оружие.
         /// </summary>
