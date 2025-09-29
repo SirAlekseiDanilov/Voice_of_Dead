@@ -1,5 +1,3 @@
-//using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace VoD {
@@ -7,8 +5,13 @@ namespace VoD {
     /// <summary>
     /// ќружие  улак.
     /// </summary>
-    public class Weapon_Fist : Weapon {
+    public class Weapon_Line : Weapon {
 
+        // ќбласть специальных характеристик
+        [Header("SPECIAL >>>")]
+        //[Space(5)]
+
+        // Ѕлок настроек:
         [Header("Settings:")]
 
         [SerializeField] private Transform head;
@@ -20,11 +23,7 @@ namespace VoD {
 
         private void Start() {
             player = transform.root.GetComponent<Player>();
-            //line = transform.GetComponent<LineRenderer>();
-
-            //line.SetVertexCount(2);
-            //line.positionCount = 2;
-            line.SetPosition(1, new Vector3(0, WeaponDistance - 0.5f, 0));
+            Assign();
         }
 
         /// <summary>
@@ -44,6 +43,24 @@ namespace VoD {
             }
             // https://unityhub.ru/scripting/Debug.DrawLine
             // Debug.DrawLine(tWeapon.position, Vector2.up, Color.green, 2.5f);
+        }
+
+        /// <summary>
+        /// ѕрисвоение характеристик оружию:
+        /// </summary>
+        [ContextMenu("Assign!")]
+        public new void Assign() {
+
+            //выполн€ю действи€, общие дл€ любого оружи€
+            base.Assign();
+
+            //присваиваю игроку данное оружие
+            transform.root.GetComponent<Player>().Weapon = 
+                transform.GetComponent<Weapon>(); // todo self
+
+            //задаю особые характеристики данного оружи€
+            print("ѕрисвоение кулаков !");
+            line.SetPosition(1, new Vector3(0, WeaponDistance - 0.5f, 0));
         }
 
     }

@@ -51,7 +51,7 @@ namespace VoD {
         /// Оружие.
         /// </summary>
         [SerializeField] private Weapon weapon;
-        public Weapon Weapon => weapon;
+        public Weapon Weapon { get => weapon; set => weapon = value; }
 
         //[Header("Movement")]
 

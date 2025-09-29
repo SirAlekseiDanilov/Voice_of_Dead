@@ -78,9 +78,9 @@ namespace VoD {
             // print(angle);
             // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
 
-
-            headPlayer.eulerAngles = new Vector3(0f, 0f, angle);
-            armPlayer.eulerAngles = new Vector3(0f, 0f, angle);
+            Vector3 v = new Vector3(0f, 0f, angle);
+            headPlayer.eulerAngles = v;
+            armPlayer.eulerAngles = v;
             player.HeadAngle = angle;
             player.HeadAngleNorm = angleNorm;
         }
