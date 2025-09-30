@@ -43,6 +43,8 @@ namespace VoD {
             }
             // https://unityhub.ru/scripting/Debug.DrawLine
             // Debug.DrawLine(tWeapon.position, Vector2.up, Color.green, 2.5f);
+
+            //GameManager.Instance.NewGame();
         }
 
         /// <summary>
