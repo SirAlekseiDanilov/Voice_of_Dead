@@ -3,7 +3,7 @@ using UnityEngine;
 namespace VoD {
 
     /// <summary>
-    /// Оружие Кулак.
+    /// Оружие линейное.
     /// </summary>
     public class Weapon_Line : Weapon {
 
@@ -27,12 +27,10 @@ namespace VoD {
         }
 
         /// <summary>
-        /// Атака кулаком:
+        /// Атака:
         /// </summary>
         [ContextMenu("Attack!")]
         public override void Attack() {
-            print("Удар кулаком !");
-
             //https://unityhub.ru/scripting/Physics2D.Raycast
             //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
             //hit = Physics2D.Raycast(tWeapon.position, Vector2.up, Mathf.Infinity);
@@ -61,7 +59,8 @@ namespace VoD {
                 transform.GetComponent<Weapon>(); // todo self
 
             //задаю особые характеристики данного оружия
-            print("Присвоение кулаков !");
+            print("Присвоение !");
+            head = player.Head;
             line.SetPosition(1, new Vector3(0, WeaponDistance - 0.5f, 0));
         }
 

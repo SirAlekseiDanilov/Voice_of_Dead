@@ -29,7 +29,7 @@ namespace VoD {
         void Awake() {
             rb = GetComponent<Rigidbody2D>();
             player = GetComponent<Player>();
-            headPlayer = player.Body;
+            headPlayer = player.Head;
             armPlayer = player.Arm;
             //angle = GetComponent<Player>().HeadAngle;
         }

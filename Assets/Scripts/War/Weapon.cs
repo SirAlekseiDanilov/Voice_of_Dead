@@ -111,7 +111,7 @@ namespace VoD {
 
 
         // Блок настроек:
-        [Header("Settings:")]
+        [Header("Settings:")] [Space(5)]
 
         [Tooltip("Картинка отображения (на сцене).")]
         [SerializeField] private SpriteRenderer imageRenderer;
