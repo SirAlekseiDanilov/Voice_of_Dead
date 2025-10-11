@@ -1,4 +1,3 @@
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace VoD {
@@ -14,6 +13,10 @@ namespace VoD {
         // Ѕлок настроек:
         [Header("Settings:")]
         [Space(5)]
+
+        [Tooltip(" рива€ распределени€ урона.")]
+        [SerializeField] private AnimationCurve damageCurve;
+        // от 1 до 1 линией - однаковый урон по всей зоне
 
         [Tooltip(" артинка зоны поражени€ оружи€.")]
         [SerializeField] private GameObject circle;
@@ -47,7 +50,10 @@ namespace VoD {
         private void OnTriggerStay2D(Collider2D other) { //OnTriggerStay OnTriggerEnter2D
 
             if (isDamaged && other.gameObject.tag == "Interactable") {
-                other.transform.GetComponent<Destructible>().ApplyDamage(WeaponDamage);
+                float distance = Vector3.Distance(transform.position, other.transform.position);
+                float damage = WeaponDamage * damageCurve.Evaluate(Mathf.Clamp01(1 - distance / WeaponDistance));
+                other.transform.GetComponent<Destructible>().ApplyDamage((int) damage);
+                print(damage);
             }
             isDamaged = false;
         }
