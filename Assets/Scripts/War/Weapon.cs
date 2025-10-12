@@ -91,6 +91,14 @@ namespace VoD {
         [Range(-180, 180)][SerializeField] private int imageSceneRotate = 0;
         public int ImageSceneRotate { get => imageSceneRotate; set => imageSceneRotate = value; }
 
+
+        [Tooltip("Поворачивать ли персонажем картинку оружия на сцене.")]
+        /// <summary>
+        /// Поворачивать ли персонажем картинку оружия на сцене.
+        /// </summary>
+        [SerializeField] private bool imageIsRotate = true;
+        public bool ImageIsRotate { get => imageIsRotate; set => imageIsRotate = value; }
+
         [Space(5)]
 
         [Tooltip("Картинка атаки (на сцене).")]
@@ -143,6 +151,11 @@ namespace VoD {
             print("Присвоение выбранного оружия !");
             imageRenderer.sprite = imageScene;
             imageRenderer.transform.eulerAngles = new Vector3(0f, 0f, imageSceneRotate);
+
+            Player player = transform.root.GetComponent<Player>();
+            player.Weapon = transform.GetComponent<Weapon>();
+            player.WeaponImageIsRotate = ImageIsRotate;
+
         }
 
         #endregion

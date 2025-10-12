@@ -23,14 +23,10 @@ namespace VoD {
         private float delta = 0.05f;
 
         private Player player;
-        private Transform headPlayer;
-        private Transform armPlayer;
 
         void Awake() {
             rb = GetComponent<Rigidbody2D>();
             player = GetComponent<Player>();
-            headPlayer = player.Head;
-            armPlayer = player.Arm;
             //angle = GetComponent<Player>().HeadAngle;
         }
 
@@ -75,14 +71,9 @@ namespace VoD {
             if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y < -delta) { angle = 180; angleNorm = Vector2.down; }
             if (moveVector.x >= -delta & moveVector.x <= delta & moveVector.y > delta) { angle = 0; angleNorm = Vector2.up; }
             if (moveVector.x < -delta & moveVector.y >= -delta & moveVector.y <= delta) { angle = 90; angleNorm = Vector2.left; }
-            // print(angle);
-            // transform.localRotation = Quaternion.Euler(0f, 0f, (float)angle);
 
-            Vector3 v = new Vector3(0f, 0f, angle);
-            headPlayer.eulerAngles = v;
-            armPlayer.eulerAngles = v;
-            player.HeadAngle = angle;
-            player.HeadAngleNorm = angleNorm;
+            // сообщил угол игроку (и забыл...)
+            player.AngleSet(angle, angleNorm);
         }
     }
 }

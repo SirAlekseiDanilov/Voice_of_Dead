@@ -53,6 +53,12 @@ namespace VoD {
         [SerializeField] private Weapon weapon;
         public Weapon Weapon { get => weapon; set => weapon = value; }
 
+        /// <summary>
+        /// Поворачивать ли персонажем картинку оружия на сцене.
+        /// </summary>
+        [SerializeField] private bool weaponImageIsRotate;
+        public bool WeaponImageIsRotate { get => weaponImageIsRotate; set => weaponImageIsRotate = value; }
+
         //[Header("Movement")]
 
         [Header("Info:")]
@@ -86,6 +92,14 @@ namespace VoD {
             maxHealth = currentHealth;
         }
 
+        public void AngleSet(float angle, Vector2 norm) {
+            Vector3 angle3 = new Vector3(0f, 0f, angle);
+            headAngle = angle;
+            headAngleNorm = norm;
+            head.eulerAngles = angle3;
+            if (weaponImageIsRotate) arm.eulerAngles = angle3;
+            // лишнее...
+        }
 
         public void TakeDamage(int amount) {
             currentHealth -= amount;

@@ -67,10 +67,6 @@ namespace VoD {
             //выполняю действия, общие для любого оружия
             base.Assign();
 
-            //присваиваю игроку данное оружие
-            transform.root.GetComponent<Player>().Weapon = 
-                transform.GetComponent<Weapon>(); // todo self
-
             //задаю особые характеристики данного оружия
             print("Присвоение ауры !");
 

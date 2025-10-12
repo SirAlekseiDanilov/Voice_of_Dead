@@ -382,6 +382,7 @@ MonoBehaviour:
   imageUI: {fileID: -2072313788, guid: efe752fa98de973418502e5446699022, type: 3}
   imageScene: {fileID: -1539568341, guid: 0228362699682ad44a48e6d50dabb32b, type: 3}
   imageSceneRotate: 45
+  imageIsRotate: 1
   imageAttack: {fileID: 21300000, guid: 94fe868620119564f9474f40cd6145aa, type: 3}
   imageHit: {fileID: 21300000, guid: d1c88f142eee55b4eb2b2cfd7b3624ce, type: 3}
   imageRenderer: {fileID: 7992171125239112313}
