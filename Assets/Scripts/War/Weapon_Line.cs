@@ -37,7 +37,7 @@ namespace VoD {
             hit = Physics2D.Raycast(head.position, player.HeadAngleNorm, WeaponDistance); //localPosition
             if (hit.collider != null) {
                 print("Объект найден: " + hit.collider.name);
-                hit.transform.GetComponent<Destructible>().ApplyDamage(WeaponDamage);
+                hit.transform.GetComponent<Destructible>().ApplyDamage(WeaponDamage, DamageClass);
             }
             // https://unityhub.ru/scripting/Debug.DrawLine
             // Debug.DrawLine(tWeapon.position, Vector2.up, Color.green, 2.5f);

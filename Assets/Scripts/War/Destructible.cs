@@ -32,10 +32,11 @@ namespace VoD {
         /// Применение урона к объекту.
         /// </summary>
         /// <param name="damage"></param>
-        public void ApplyDamage(int damage) {
+        public void ApplyDamage(int damage, DamageClass damageClass) {
             if (Indestructible)
                 return;
 
+            // todo доработать по типам урона
             HitPointsCurrent -= damage;
 
             if (HitPointsCurrent <= 0)

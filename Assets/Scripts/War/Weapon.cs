@@ -33,6 +33,13 @@ namespace VoD {
 
         [Header("Weapon:")] [Space(5)]
 
+        [Tooltip("Тип урона оружия.")]
+        [SerializeField] private DamageClass damageClass;
+        /// <summary>
+        /// Тип урона оружия.
+        /// </summary>
+        public DamageClass DamageClass { get => damageClass; set => damageClass = value; }
+
         [Tooltip("Урон оружия.")]
         [SerializeField] private int damage;
         /// <summary>
@@ -124,6 +131,9 @@ namespace VoD {
         [Tooltip("Картинка отображения (на сцене).")]
         [SerializeField] private SpriteRenderer imageRenderer;
 
+        [Tooltip("Обладатель оружия.")]
+        [SerializeField] private int owner; // todo переделать на хозяина игрок/враг
+
         /*
         [Header("Weapon2:")]
 
@@ -153,9 +163,12 @@ namespace VoD {
             imageRenderer.transform.eulerAngles = new Vector3(0f, 0f, imageSceneRotate);
 
             Player player = transform.root.GetComponent<Player>();
-            player.Weapon = transform.GetComponent<Weapon>();
-            player.WeaponImageIsRotate = ImageIsRotate;
+            if (player != null) {
+                player.Weapon = transform.GetComponent<Weapon>();
+                player.WeaponImageIsRotate = ImageIsRotate;
+            }
 
+            // включение оружия (лазер наведение...)
         }
 
         #endregion

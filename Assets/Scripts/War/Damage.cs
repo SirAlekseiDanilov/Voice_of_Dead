@@ -18,7 +18,7 @@ namespace VoD {
 
         private void Awake() {
             Player = GameObject.FindGameObjectWithTag("Player");
-            Health = Player.GetComponent<Player>();
+            if (Player != null) { Health = Player.GetComponent<Player>(); } // не тут!
         }
 
         private void OnTriggerEnter2D(Collider2D col) {

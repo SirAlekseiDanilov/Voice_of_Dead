@@ -1884,10 +1884,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fist
       objectReference: {fileID: 0}
-    - target: {fileID: 3506951959160200342, guid: e99207e31b26c8e43a32fcece1d9f0c1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e99207e31b26c8e43a32fcece1d9f0c1, type: 3}
 --- !u!114 &3932173892421425165
@@ -2178,10 +2174,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
-    - target: {fileID: 7992171126165658490, guid: c1f068f10dee7fb4eb36768ad5db92c4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1f068f10dee7fb4eb36768ad5db92c4, type: 3}
 --- !u!1001 &8152880102807707413
@@ -2251,10 +2243,6 @@ PrefabInstance:
     - target: {fileID: 5009945677556813763, guid: 069e98f3896ff614cb450dc6c2121c21, type: 3}
       propertyPath: m_Name
       value: Aura
-      objectReference: {fileID: 0}
-    - target: {fileID: 5009945677556813763, guid: 069e98f3896ff614cb450dc6c2121c21, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5009945677556813788, guid: 069e98f3896ff614cb450dc6c2121c21, type: 3}
       propertyPath: m_RootOrder

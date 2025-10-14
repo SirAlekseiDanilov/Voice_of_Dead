@@ -240,6 +240,7 @@ MonoBehaviour:
   description: "\u0411\u0430\u0437\u043E\u0432\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435
     \u0431\u043B\u0438\u0436\u043D\u0435\u0433\u043E \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F.
     \u041D\u0435\u043B\u044C\u0437\u044F \u043E\u0442\u043E\u0431\u0440\u0430\u0442\u044C."
+  damageClass: 1
   damage: 1
   periodicity: 0.25
   distance: 1.5
@@ -250,6 +251,7 @@ MonoBehaviour:
   imageAttack: {fileID: 21300000, guid: 94fe868620119564f9474f40cd6145aa, type: 3}
   imageHit: {fileID: 21300000, guid: d1c88f142eee55b4eb2b2cfd7b3624ce, type: 3}
   imageRenderer: {fileID: 3506951958671482794}
+  owner: 0
   head: {fileID: 0}
   line: {fileID: 3506951959241491896}
 --- !u!1 &3506951959241491897

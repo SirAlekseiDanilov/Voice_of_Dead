@@ -52,7 +52,7 @@ namespace VoD {
             if (isDamaged && other.gameObject.tag == "Interactable") {
                 float distance = Vector3.Distance(transform.position, other.transform.position);
                 float damage = WeaponDamage * damageCurve.Evaluate(Mathf.Clamp01(1 - distance / WeaponDistance));
-                other.transform.GetComponent<Destructible>().ApplyDamage((int) damage);
+                other.transform.GetComponent<Destructible>().ApplyDamage((int) damage, DamageClass);
                 print(damage);
             }
             isDamaged = false;
