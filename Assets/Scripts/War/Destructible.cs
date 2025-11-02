@@ -22,6 +22,24 @@ namespace VoD {
         private int HitPointsCurrent;
         public int HitPoints => HitPointsCurrent;
 
+
+        [Tooltip("Сопротивляемость доля (тело) [физ,маг,элем].")]
+        [SerializeField] private Vector3 defencePercent;
+        /// <summary>
+        /// Сопротивляемость доля (тело) [физ,маг,элем].
+        /// </summary>
+        public Vector3 DefencePercent => defencePercent;
+
+
+        [Tooltip("Сопротивляемость значение (амуниция) [физ,маг,элем].")]
+        [SerializeField] private Vector3 defenceValue;
+        /// <summary>
+        /// Сопротивляемость значение (амуниция) [физ,маг,элем].
+        /// </summary>
+        public Vector3 DefenceValue => defenceValue;
+
+
+
         //[SerializeField] private ImpactEffect ExplosionPrefab;
 
         #endregion

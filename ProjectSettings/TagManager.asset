@@ -6,6 +6,8 @@ TagManager:
   tags:
   - UI_H
   - Interactable
+  - Ground
+  - Material
   layers:
   - Default
   - TransparentFX
