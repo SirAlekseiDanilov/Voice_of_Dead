@@ -10,7 +10,7 @@ namespace VoD {
         }
 
         void Update() {
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Q)) {
                 //print(1);
                 player.Weapon.Attack();
             }
